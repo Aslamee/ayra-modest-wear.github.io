@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ayra Modest Wear</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff0f5;
+    }
+
+    nav {
+      background: #d63384;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      color: white;
+      background: #d63384;
+    }
+
+    .products, .order-form {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card {
+      display: inline-block;
+      background: white;
+      width: 220px;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      color: #d63384;
+    }
+
+    .btn {
+      background: #25D366;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .order-form input, .order-form select {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+
+    footer {
+      background: #fce4ec;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+
+  <script>
+    function sendOrder() {
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let product = document.getElementById("product").value;
+
+      let message =
+        "Order Request:%0A" +
+        "Name: " + name + "%0A" +
+        "Phone: " + phone + "%0A" +
+        "Product: " + product;
+
+      window.open("https://wa.me/916369285752?text=" + message, "_blank");
+    }
+  </script>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+  <h1>Ayra Modest Wear</h1>
+  <p>Elegant • Modest • Affordable Hijabs</p>
+</header>
+
+<section class="products">
+  <h2>Our Products</h2>
+
+  <div class="card">
+    <img src="images/black-hijab.jpg">
+    <h3>Black Hijab</h3>
+    <p>₹900 – ₹1200</p>
+    <a class="btn" href="#order">Order Now</a>
+  </div>
+
+  <div class="card">
+    <img src="images/grey-hijab.jpg">
+    <h3>Grey Hijab</h3>
+    <p>₹1200 – ₹1500</p>
+    <a class="btn" href="#order">Order Now</a>
+  </div>
+</section>
+
+<section class="order-form" id="order">
+  <h2>Place Your Order</h2>
+
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="tel" id="phone" placeholder="Phone Number" required>
+
+  <select id="product">
+    <option>Black Hijab</option>
+    <option>Grey Hijab</option>
+    <option>Peach Hijab</option>
+    <option>Hajj Material</option>
+    <option>Maternity Kit</option>
+  </select>
+
+  <br>
+  <button class="btn" onclick="sendOrder()">Send Order on WhatsApp</button>
+</section>
+
+<footer>
+  <p>Email: <a href="mailto:info@ayra-modest-wear.com">info@ayra-modest-wear.com</a></p>
+  <p>Instagram: @ayra.modest_wear_.official</p>
+</footer>
+
+</body>
+</html>
